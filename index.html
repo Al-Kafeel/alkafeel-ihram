@@ -47,9 +47,9 @@
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
   .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); padding: 0.9rem 2.2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
-  .hero-right { position: relative; overflow: hidden; animation: fadeIn 1.2s 0.2s ease both; background: linear-gradient(135deg, #2d5c42 0%, #1a3a2a 100%); }
+  .hero-right { position: relative; overflow: hidden; animation: fadeIn 1.2s 0.2s ease both; }
+  .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.75); }
   .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--green) 0%, transparent 40%); z-index: 1; }
-  .hero-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: rgba(201,168,76,0.3); }
   .hero-ornament { position: absolute; bottom: 3rem; left: 6rem; display: flex; align-items: center; gap: 2rem; animation: fadeUp 0.8s 0.6s ease both; }
   .stat { text-align: left; }
   .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold-light); font-weight: 300; }
@@ -68,9 +68,9 @@
   /* ABOUT */
   #about { background: var(--white); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-  .about-visual { position: relative; aspect-ratio: 3/4; overflow: hidden; background: linear-gradient(135deg, #f5ecd0 0%, #e2c97e 100%); }
+  .about-visual { position: relative; aspect-ratio: 3/4; overflow: hidden; }
   .about-visual::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 80%; height: 80%; border: 1px solid var(--gold); z-index: 0; pointer-events: none; }
-  .about-visual-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: rgba(201,168,76,0.2); position: relative; z-index: 1; }
+  .about-visual img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
   .about-content { padding: 2rem 0; }
   .about-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--green); line-height: 1.2; margin-bottom: 1.5rem; }
   .about-content h2 em { font-style: italic; color: var(--green-light); }
@@ -87,9 +87,9 @@
   .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
   .product-card { background: var(--white); border: 1px solid rgba(201,168,76,0.15); transition: all 0.3s; cursor: pointer; overflow: hidden; }
   .product-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 20px 50px rgba(26,58,42,0.12); }
-  .product-img { aspect-ratio: 3/4; overflow: hidden; position: relative; background: linear-gradient(135deg, #e8e4dc 0%, #d4cec2 100%); }
-  .product-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: rgba(0,0,0,0.1); }
-  .product-card:hover .product-img-placeholder { transform: scale(1.04); }
+  .product-img { aspect-ratio: 3/4; overflow: hidden; position: relative; background: #e8e4dc; }
+  .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .product-card:hover .product-img img { transform: scale(1.04); }
   .product-tag { position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--green); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem; font-weight: 500; z-index: 2; }
   .product-info { padding: 1.4rem; }
   .product-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--green); margin-bottom: 0.4rem; }
@@ -106,12 +106,13 @@
   #gallery .section-eyebrow { color: var(--gold-light); }
   #gallery .section-line { background: var(--gold); }
   .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 0.8rem; }
-  .gallery-item { overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(201,168,76,0.1); transition: all 0.3s; background: var(--green-mid); display: flex; align-items: center; justify-content: center; }
+  .gallery-item { overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(201,168,76,0.1); transition: all 0.3s; background: var(--green-mid); }
   .gallery-item:hover { border-color: var(--gold); }
   .gallery-item:hover .gallery-overlay { opacity: 1; }
-  .gallery-placeholder { font-size: 2.5rem; color: rgba(201,168,76,0.2); }
+  .gallery-item:hover img { transform: scale(1.06); }
   .gallery-item.tall { grid-row: span 2; }
   .gallery-item.wide { grid-column: span 2; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
   .gallery-overlay { position: absolute; inset: 0; background: rgba(26,58,42,0.45); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
   .gallery-overlay svg { width: 36px; height: 36px; stroke: var(--white); fill: none; stroke-width: 1.5; }
   .gallery-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.8rem; background: linear-gradient(to top, rgba(26,58,42,0.95), transparent); font-size: 0.72rem; color: rgba(255,255,255,0.8); letter-spacing: 0.08em; }
@@ -238,7 +239,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-placeholder">📦</div>
+    <img src="images/package_ehram.jpeg" alt="Al-Kafeel Ihram Package">
   </div>
 </section>
 
@@ -247,7 +248,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-visual">
-        <div class="about-visual-placeholder">👔</div>
+        <img src="images/ehram_pic_good.jpeg" alt="Premium Ihram Fabric">
       </div>
       <div class="about-content">
         <span class="section-eyebrow">Our Story</span>
@@ -290,7 +291,7 @@
       <div class="product-card">
         <div class="product-img">
           <div class="product-tag">Bestseller</div>
-          <div class="product-img-placeholder">📦</div>
+          <img src="images/package_ehram.jpeg" alt="Classic Ihram Set">
         </div>
         <div class="product-info">
           <div class="product-name">Classic Ihram Set</div>
@@ -305,7 +306,7 @@
       <div class="product-card">
         <div class="product-img">
           <div class="product-tag">Allergy Free</div>
-          <div class="product-img-placeholder">👔</div>
+          <img src="images/ehram_pic_at_angle.jpeg" alt="Allergy Free Ihram">
         </div>
         <div class="product-info">
           <div class="product-name">Allergy-Free Ihram Set</div>
@@ -319,7 +320,7 @@
 
       <div class="product-card">
         <div class="product-img">
-          <div class="product-img-placeholder">🧵</div>
+          <img src="images/ehram_pic.jpeg" alt="Ihram Fabric">
         </div>
         <div class="product-info">
           <div class="product-name">Ihram Fabric (Per Roll)</div>
@@ -333,7 +334,7 @@
 
       <div class="product-card">
         <div class="product-img">
-          <div class="product-img-placeholder">👡</div>
+          <img src="images/slipons.png" alt="Ihram Slippers">
         </div>
         <div class="product-info">
           <div class="product-name">Ihram Slip-On Sandals</div>
@@ -347,7 +348,7 @@
 
       <div class="product-card">
         <div class="product-img">
-          <div class="product-img-placeholder">👜</div>
+          <img src="images/belt.jpg" alt="Ihram Belt Bag">
         </div>
         <div class="product-info">
           <div class="product-name">Ihram Belt / Waist Bag</div>
@@ -362,7 +363,7 @@
       <div class="product-card">
         <div class="product-img">
           <div class="product-tag">Ladies</div>
-          <div class="product-img-placeholder">👗</div>
+          <img src="images/abayas.png" alt="Signature Abaya Collection">
         </div>
         <div class="product-info">
           <div class="product-name">Signature Abaya Collection</div>
@@ -388,32 +389,32 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item tall">
-        <div class="gallery-placeholder">👔</div>
+        <img src="images/ehram_pic_good.jpeg" alt="Ihram Set">
         <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gallery-label">Premium Ihram Sets</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">🧵</div>
+        <img src="images/fabric_pic_good.png" alt="Fabric texture">
         <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gallery-label">Fabric Quality</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">📋</div>
+        <img src="images/Ihram_jpg.jpeg" alt="Ihram fabric">
         <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gallery-label">Terry Cotton</div>
       </div>
       <div class="gallery-item wide">
-        <div class="gallery-placeholder">📦</div>
+        <img src="images/package_ehram.jpeg" alt="Ihram packaging">
         <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gallery-label">Branded Packaging</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">👡</div>
+        <img src="images/slipons.png" alt="Slippers">
         <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gallery-label">Ihram Sandals</div>
       </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder">👗</div>
+        <img src="images/abayas.png" alt="Abayas">
         <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <div class="gallery-label">Signature Abayas</div>
       </div>
